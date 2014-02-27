@@ -21,6 +21,7 @@
 		79A8FF6418BF7B8300213113 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79A8FF4618BF7B8300213113 /* UIKit.framework */; };
 		79A8FF6C18BF7B8300213113 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 79A8FF6A18BF7B8300213113 /* InfoPlist.strings */; };
 		79A8FF6E18BF7B8300213113 /* ReadyPlayerDemoOneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 79A8FF6D18BF7B8300213113 /* ReadyPlayerDemoOneTests.m */; };
+		79A8FF7818BF7F4400213113 /* Rasputin.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 79A8FF7718BF7F4400213113 /* Rasputin.m4a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		79A8FF6918BF7B8300213113 /* ReadyPlayerDemoOneTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ReadyPlayerDemoOneTests-Info.plist"; sourceTree = "<group>"; };
 		79A8FF6B18BF7B8300213113 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		79A8FF6D18BF7B8300213113 /* ReadyPlayerDemoOneTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReadyPlayerDemoOneTests.m; sourceTree = "<group>"; };
+		79A8FF7718BF7F4400213113 /* Rasputin.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Rasputin.m4a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 				79A8FF5418BF7B8300213113 /* Main.storyboard */,
 				79A8FF5718BF7B8300213113 /* ViewController.h */,
 				79A8FF5818BF7B8300213113 /* ViewController.m */,
+				79A8FF7718BF7F4400213113 /* Rasputin.m4a */,
 				79A8FF5A18BF7B8300213113 /* Images.xcassets */,
 				79A8FF4918BF7B8300213113 /* Supporting Files */,
 			);
@@ -230,6 +233,7 @@
 			files = (
 				79A8FF5B18BF7B8300213113 /* Images.xcassets in Resources */,
 				79A8FF4D18BF7B8300213113 /* InfoPlist.strings in Resources */,
+				79A8FF7818BF7F4400213113 /* Rasputin.m4a in Resources */,
 				79A8FF5618BF7B8300213113 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
