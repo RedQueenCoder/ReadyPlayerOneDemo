@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *pauseButton;
 @property (weak, nonatomic) IBOutlet UIButton *playButton;
 @property (weak, nonatomic) IBOutlet UIButton *stopButton;
+
 @property (weak, nonatomic) IBOutlet UISlider *volumeSlider;
 @property (weak, nonatomic) IBOutlet UISlider *rateSlider;
 @property (weak, nonatomic) IBOutlet UISlider *panSlider;
@@ -28,14 +29,12 @@
     
     // Set the player properties
     _player = [[AVAudioPlayer alloc] init];
-    _player = [self playerForFile:@"Rasputin" fileExtention:@"m4a"];
+    _player = [self playerForFile:@"ExoticBeat" fileExtention:@"caf"];
     
     // Set up buttons
     _playButton.enabled = YES;
     _pauseButton.enabled = NO;
     _stopButton.enabled = NO;
-    
-    // Set values for volume slider
     
     // Set values for the rate slider
     _rateSlider.minimumValue = 0.5;
@@ -43,6 +42,9 @@
     _rateSlider.value = 1.0;
     
     // Set values for pan slider
+    _panSlider.minimumValue = -1.0;
+    _panSlider.maximumValue = 1.0;
+    _panSlider.value = 0;
     
     // Connect to the notification center
     NSNotificationCenter *nsnc = [NSNotificationCenter defaultCenter];
@@ -81,33 +83,49 @@
 }
 
 - (IBAction)pauseButtonTapped:(id)sender {
-    [_player pause];
-    _playButton.enabled = YES;
-    _stopButton.enabled = NO;
-    _pauseButton.enabled = NO;
+    [self.player pause];
+    self.playButton.enabled = YES;
+    self.stopButton.enabled = NO;
+    self.pauseButton.enabled = NO;
 }
 
 - (IBAction)playButtonTapped:(id)sender {
-    [_player play];
-    _playButton.enabled = NO;
-    _pauseButton.enabled = YES;
-    _stopButton.enabled = YES;
+    [self.player play];
+    self.playButton.enabled = NO;
+    self.pauseButton.enabled = YES;
+    self.stopButton.enabled = YES;
 }
 
 - (IBAction)stopButtonTapped:(id)sender {
-    [_player stop];
-    _playButton.enabled = YES;
-    _stopButton.enabled = NO;
-    _pauseButton.enabled = NO;
+    [self.player stop];
+    self.playButton.enabled = YES;
+    self.stopButton.enabled = NO;
+    self.pauseButton.enabled = NO;
 }
 
 - (IBAction)volumeSliderMoved:(id)sender {
+    self.player.volume = self.volumeSlider.value;
 }
 
 - (IBAction)rateSliderMoved:(id)sender {
+    self.player.rate = self.rateSlider.value;
 }
 
 - (IBAction)panSliderMoved:(id)sender {
+    self.player.pan = self.panSlider.value;
+}
+
+#pragma mark - INTERRUPTION HANDLERS
+
+- (void)audioPlayerBeginInterruption:(AVAudioPlayer *)player
+{
+    [self.player pause];
+}
+
+- (void)audioPlayerEndInterruption:(AVAudioPlayer *)player
+                       withOptions:(NSUInteger)options
+{
+    [self.player play];
 }
 
 #pragma mark - ROUTE CHANGE HANDLER
