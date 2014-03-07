@@ -147,7 +147,6 @@
         
         if ([portType isEqualToString:AVAudioSessionPortHeadphones]) {
             [self.player stop];
-            // [self.delegate playbackStopped];
         }
     }
 }
